@@ -1,0 +1,41 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2021-06-28T02:59:54+05:30",
+    "name": "C# Egg",
+    "author": "doge@chiragdev.xyz",
+    "description": "Just a normal pterodactyl egg to run C# apps",
+    "features": null,
+    "images": [
+        "quay.io\/chirag350\/csharp-egg"
+    ],
+    "file_denylist": [],
+    "startup": "dotnet ${STARTUP_PARAM}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Started\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\necho \"Hello\"",
+            "container": "debian:bullseye-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Startup Param",
+            "description": "",
+            "env_variable": "STARTUP_PARAM",
+            "default_value": "run",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:200"
+        }
+    ]
+}
