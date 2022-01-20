@@ -4,8 +4,8 @@ LABEL author="chirag350" maintainer="chirag350 <doge@chiragdev.xyz>"
 COPY ./packages-microsoft-prod.deb /
 
 RUN apt-get update -y && \
+    apt-get install -y curl ca-certificates openssl git tar fontconfig tzdata iproute2 apt-transport-https && \
     dpkg -i /packages-microsoft-prod.deb && \
- 	apt-get install -y curl ca-certificates openssl git tar fontconfig tzdata iproute2 apt-transport-https && \
     rm /packages-microsoft-prod.deb && \
     apt-get -y update && \
     apt-get install -y dotnet-sdk-6.0 aspnetcore-runtime-6.0 && \
